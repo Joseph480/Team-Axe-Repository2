@@ -9,3 +9,4 @@ This will ensure that Github commits and pulls work!
 It should already be properly set, since I commited the project after checking on it, but you can't be too safe.
 
 P.S: Ver 2020.2.1f1 appears to have removed the Asset Serialization mode, and now that seems to work automatically. (?)
+

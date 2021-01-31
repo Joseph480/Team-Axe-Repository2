@@ -47,6 +47,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Flashlight Scripts\Flashlight_Mechanics.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player_Feet.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player_Move_Controller.cs" />
  <Reference Include="UnityEngine">

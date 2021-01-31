@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class Input_Handler : MonoBehaviour
 {
-    #region Data
     //[Space, Header("Input Data")]
     //[SerializeField] private CameraInputData cameraInputData = null;
     //[SerializeField] private MovementInputData movementInputData = null;
     public Interaction_Input_Data interactionInputData = null;
-    #endregion
-
-    #region BuiltIn Methods
+    
     void Start()
     {
         //cameraInputData.ResetInput();
@@ -25,10 +22,7 @@ public class Input_Handler : MonoBehaviour
         //GetMovementInputData();
         GetInteractionInputData();
     }
-    #endregion
 
-    
-    #region Custom Methods
     void GetInteractionInputData()
     {
         interactionInputData.InteractedClicked = Input.GetKeyDown(KeyCode.E);
@@ -65,6 +59,5 @@ public class Input_Handler : MonoBehaviour
         movementInputData.CrouchClicked = Input.GetKeyDown(KeyCode.LeftControl);
     }
     */
-    #endregion
     
 }

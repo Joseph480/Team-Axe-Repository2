@@ -16,6 +16,8 @@ public class Interaction_Controller : MonoBehaviour
     public LayerMask interactableLayer;
 
     private Camera m_cam;
+    private bool m_interacting;
+    private float m_holdTimer = 0f;
 
     void Awake()
     {
@@ -65,6 +67,42 @@ public class Interaction_Controller : MonoBehaviour
 
     void CheckForInteractableInput()
     {
-        
+        if (interactionData.IsEmpty())
+            return;
+
+        if (interactionInputData.InteractedClicked)
+        {
+            m_interacting = true;
+            m_holdTimer = 0f;
+        }
+
+        if (interactionInputData.InteractedReleased)
+        {
+            m_interacting = false;
+            m_holdTimer = 0f;
+        }
+
+        if (m_interacting)
+        {
+            if (!interactionData.Interactable.IsInteractable)
+                return;
+
+            if (interactionData.Interactable.HoldInteract)
+            {
+                m_holdTimer += Time.deltaTime;
+
+                if(m_holdTimer >= interactionData.Interactable.HoldDuration)
+                {
+                    interactionData.Interact();
+                    m_interacting = false;
+                }
+            }
+            else
+            {
+                interactionData.Interact();
+                m_interacting = false;
+            }
+            
+        }
     }
 }

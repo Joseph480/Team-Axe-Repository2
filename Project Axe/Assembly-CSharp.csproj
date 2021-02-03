@@ -49,6 +49,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Scriptable Objects\Interaction_Data.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player_Feet.cs" />
+     <Compile Include="Assets\Scripts\Interaction System\Interaction_Controller.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player_Move_Controller.cs" />
      <Compile Include="Assets\Scripts\Input Handler\Input_Handler.cs" />
      <Compile Include="Assets\Scripts\Interaction System\I_Interactable.cs" />

@@ -235,7 +235,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.4, z: 0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 919511723}
   m_Father: {fileID: 184731422}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -336,7 +337,6 @@ Transform:
   m_Children:
   - {fileID: 183542942}
   - {fileID: 911378843}
-  - {fileID: 919511723}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -572,11 +572,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919511722}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.31, y: -0.1, z: 0.93552285}
+  m_LocalPosition: {x: 0.31, y: -0.5, z: 0.63552284}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
-  m_Father: {fileID: 184731422}
-  m_RootOrder: 2
+  m_Father: {fileID: 183542942}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &919511724
 MonoBehaviour:
@@ -591,8 +591,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickSound: {fileID: 0}
-  batteryLifeInSeconds: 60
+  batteryLifeInSeconds: 5
   maxIntensity: 1
+  minIntensity: 0.5
+  swayAmount: 0.5
+  maxAmount: 0.1
+  smoothAmount: 5
+  maxFlickerSpeed: 0.5
+  minFlickerSpeed: 0.2
 --- !u!65 &919511725
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -602,7 +608,7 @@ BoxCollider:
   m_GameObject: {fileID: 919511722}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}

@@ -14,8 +14,12 @@ public class Flashlight_Mechanics : MonoBehaviour
     public float maxAmount;                                         //Max sway
     public float smoothAmount;                                      //How smooth the object sways
 
-    public float maxFlickerSpeed;
-    public float minFlickerSpeed;
+    public float FlickerSpeed;                                      //How long to start flicker enumerator once it hits startFlickerat var
+
+    public float startFlicker;                                      //When the flashlight will start to flicker
+
+    public float maxRecharge;                                       //Max amount of recharge smacking the flashlight can give
+    public float minRecharge;                                       //Min amount of recharge smacking the flashlight can give
 
     private float batteryLife;                                      //Light intensity on light component  
     private bool isActive;                                          //Checks if the flashligh is on 
@@ -56,27 +60,42 @@ public class Flashlight_Mechanics : MonoBehaviour
             if (myLight.intensity < minIntensity)                                                //Makes the flashlight stop at the minIntensity var 
             {
                 myLight.intensity = minIntensity;                                                //Makes sure the intensity can't go below minIntensity
+                
             }
+                                                                                                 //THIS WAS JUST A TEST
+            if (myLight.intensity <= startFlicker)                                               //When intensity is less than the nuber set when the flicker starts
+            {
+                StartCoroutine(FlickerEffect());                                                 //Run flicker IEnumerator
+            }
+
+            if (myLight.intensity >= startFlicker)                                               //When intensity is great than the number set when the flicker starts
+            {
+                StopCoroutine(FlickerEffect());                                                  //Stop flicker IEnumerator
+            }
+
 
             if (myLight.intensity == minIntensity)                                               //When the flashlight reaches the minIntensity, the player can use this function    
             {
                 if (Input.GetKeyDown(KeyCode.R))                                                 //Press "R" to smack flashlight
                 {
-                    myLight.intensity += Random.Range(0.2f, 0.5f);                               //Range the flashlight can be recharged to
-                    StartCoroutine(FlickerEffect());
-
+                    myLight.intensity += Random.Range(minRecharge, maxRecharge);                 //Range the flashlight can be recharged to
+                    
                     if (myLight.intensity > maxIntensity)                                        //If the intensity is higher than maxIntensity var
                     {
                         myLight.intensity = maxIntensity;                                        //Intensity won't go higher than maxIntensity var
                     }
                 }
             }
+
         }
 
         else
         {
             myLight.enabled = false;                                                            //Turns off flashlight
+
         }
+
+        
     }
 
     void Sway()
@@ -84,19 +103,20 @@ public class Flashlight_Mechanics : MonoBehaviour
         float movementX = -Input.GetAxis("Mouse X") * swayAmount;                              //Allows the sway on the X axis
         float movementY = -Input.GetAxis("Mouse Y") * swayAmount;                              //Allows the sway on the Y axis
         movementX = Mathf.Clamp(movementX, -maxAmount, maxAmount);                             //Clamps maxAmount of sway on X axis
-        movementY = Mathf.Clamp(movementY, -maxAmount, maxAmount);                             //Clamps maxAmount of sway on X axis
+        movementY = Mathf.Clamp(movementY, -maxAmount, maxAmount);                             //Clamps maxAmount of sway on Y axis
 
         Vector3 finalPosition = new Vector3(movementX, movementY, 0);                                                                                           //Puts flashlight back to starting position
         transform.localPosition = Vector3.Lerp(transform.localPosition, finalPosition + initialPosition, Time.deltaTime * smoothAmount);                        //Equation to control sway of flashlight
     }
            
-    IEnumerator FlickerEffect()                                                                     
+    IEnumerator FlickerEffect()                                                                                 //Flicker function                           
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(Random.Range(minFlickerSpeed, maxFlickerSpeed));        
-            
-        }
+        myLight.enabled = true;                                                                                 //When flashlight is on
+            yield return new WaitForSeconds(FlickerSpeed);                                                      //How fast the the light will flicker once it reaches min intensity
+
+        myLight.enabled = false;                                                                                //When flashligh is off
+            yield return new WaitForSeconds(FlickerSpeed);                                                      //Stops flicker
+
     }
 }
 

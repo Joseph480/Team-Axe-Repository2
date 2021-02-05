@@ -591,14 +591,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickSound: {fileID: 0}
-  batteryLifeInSeconds: 5
+  batteryLifeInSeconds: 10
   maxIntensity: 1
-  minIntensity: 0.5
+  minIntensity: 0.4
   swayAmount: 0.5
   maxAmount: 0.1
   smoothAmount: 5
-  maxFlickerSpeed: 0.5
-  minFlickerSpeed: 0.2
+  FlickerSpeed: 0.2
+  startFlicker: 0
+  maxRecharge: 0.8
+  minRecharge: 0.6
 --- !u!65 &919511725
 BoxCollider:
   m_ObjectHideFlags: 0

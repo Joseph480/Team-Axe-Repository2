@@ -38,6 +38,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Player Scripts\Player_Feet.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player_Move_Controller.cs" />
+     <Compile Include="Assets\Scripts\A.I\Temporary_AI_Motor.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

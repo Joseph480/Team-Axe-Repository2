@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Interactable_Base : MonoBehaviour, I_Interactable
 {
-    public bool multipleUse;
-    public bool isInteractable;
-    public bool holdInteract;
+    [SerializeField] private bool holdInteract = true;
+    [SerializeField] private float holdDuration = 1f;
 
-    public float holdDuration;
+    [SerializeField] private bool multipleUse = false;
+    [SerializeField] private bool isInteractable = true;
 
-    public string tooltipMessage = "interact";
+    [SerializeField] private string tooltipMessage = "Interact";
 
     public bool HoldInteract => holdInteract;
     public bool MultipleUse => multipleUse;

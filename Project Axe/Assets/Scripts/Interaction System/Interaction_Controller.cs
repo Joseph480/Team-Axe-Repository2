@@ -1,17 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Interaction_Controller : MonoBehaviour
 {
     [Header("Data")]
-    public Interaction_Input_Data interactionInputData;
+    [SerializeField] private Interaction_Input_Data interactionInputData;
 
-    public Interaction_Data interactionData;
+    [SerializeField] private Interaction_Data interactionData;
+
+    [Space, Header("UI")]
+    [SerializeField] private Interaction_UI_Panel uiPanel;
 
     [Space, Header("Ray Settings")]
-    public float rayDistance;
-    public float raySphereRadius;
+    [SerializeField] private float rayDistance;
+    [SerializeField] private float raySphereRadius;
 
     public LayerMask interactableLayer;
 
@@ -38,27 +43,30 @@ public class Interaction_Controller : MonoBehaviour
         bool _hitSomething = Physics.SphereCast(_ray, raySphereRadius, out _hitInfo, rayDistance, 
         interactableLayer);
 
-        if (_hitSomething)
+        if(_hitSomething)
         {
             Interactable_Base _interactable = _hitInfo.transform.GetComponent<Interactable_Base>();
 
-            if (_interactable != null)
+            if(_interactable != null)
             {
-                if (interactionData.IsEmpty())
+                if(interactionData.IsEmpty())
                 {
                     interactionData.Interactable = _interactable;
+                    uiPanel.SetTooltip(_interactable.TooltipMessage);
                 }
                 else
                 {
-                    if (!interactionData.IsSameInteractable(_interactable))
+                    if(!interactionData.IsSameInteractable(_interactable))
                     {
                         interactionData.Interactable = _interactable;
+                        uiPanel.SetTooltip(_interactable.TooltipMessage);
                     }
                 }
             }
         }
         else
         {
+            uiPanel.ResetUI();
             interactionData.ResetData();
         }
 
@@ -67,31 +75,35 @@ public class Interaction_Controller : MonoBehaviour
 
     void CheckForInteractableInput()
     {
-        if (interactionData.IsEmpty())
+        if(interactionData.IsEmpty())
             return;
 
-        if (interactionInputData.InteractedClicked)
+        if(interactionInputData.InteractedClicked)
         {
             m_interacting = true;
             m_holdTimer = 0f;
         }
 
-        if (interactionInputData.InteractedReleased)
+        if(interactionInputData.InteractedReleased)
         {
             m_interacting = false;
             m_holdTimer = 0f;
+            uiPanel.UpdateProgressBar(0f);
         }
 
-        if (m_interacting)
+        if(m_interacting)
         {
             if (!interactionData.Interactable.IsInteractable)
                 return;
 
-            if (interactionData.Interactable.HoldInteract)
+            if(interactionData.Interactable.HoldInteract)
             {
                 m_holdTimer += Time.deltaTime;
 
-                if(m_holdTimer >= interactionData.Interactable.HoldDuration)
+                float heldPercent = m_holdTimer / interactionData.Interactable.HoldDuration;
+                uiPanel.UpdateProgressBar(heldPercent);
+
+                if(heldPercent > 1f)
                 {
                     interactionData.Interact();
                     m_interacting = false;
@@ -102,7 +114,6 @@ public class Interaction_Controller : MonoBehaviour
                 interactionData.Interact();
                 m_interacting = false;
             }
-            
         }
     }
 }

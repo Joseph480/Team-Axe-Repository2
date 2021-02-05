@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Interaction System\Interaction_Controller.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player_Move_Controller.cs" />
      <Compile Include="Assets\Scripts\Input Handler\Input_Handler.cs" />
+     <Compile Include="Assets\Scripts\Interactables\Destroy_Interactable.cs" />
      <Compile Include="Assets\Scripts\Interaction System\I_Interactable.cs" />
      <Compile Include="Assets\Scripts\Interaction System\Interactable_Base.cs" />
      <Compile Include="Assets\Scripts\Scriptable Objects\Interaction_Input_Data.cs" />

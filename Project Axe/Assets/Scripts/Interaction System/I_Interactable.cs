@@ -4,6 +4,8 @@ using UnityEngine;
 
 public interface I_Interactable
 {
+    //each script that implements this interface will need to include the following variables and methods
+
     float HoldDuration { get; }
 
     bool HoldInteract { get; }

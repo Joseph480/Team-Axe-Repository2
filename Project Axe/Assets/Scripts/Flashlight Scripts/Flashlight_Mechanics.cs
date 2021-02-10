@@ -10,6 +10,11 @@ public class Flashlight_Mechanics : MonoBehaviour
     public float maxIntensity = 1f;                                 //Variable for how bright the light can be
     public float minIntensity = 0f;                                 //Variable for how dim the light can be
 
+    public float HighPowerRange;                                    //Var for further range of light
+    public float HighPowerAngle;                                    //Var for a more narrow angle of light
+    public float LowPowerRange;                                     //Var for closer range of light
+    public float LowPowerAngle;                                     //Var for a more wide angle of light
+
     public float swayAmount;                                        //How much the flashlight can sway
     public float maxAmount;                                         //Max sway
     public float smoothAmount;                                      //How smooth the object sways
@@ -23,6 +28,7 @@ public class Flashlight_Mechanics : MonoBehaviour
 
     private float batteryLife;                                      //Light intensity on light component  
     private bool isActive;                                          //Checks if the flashligh is on 
+    private bool isToggled;                                         //Is used to switch between a low power mode and a high power mode
 
     private Light myLight;                                          //Light component
 
@@ -41,6 +47,7 @@ public class Flashlight_Mechanics : MonoBehaviour
     {
         Flashlight_Light();
         Sway();
+        Toggle();
     }
 
     void Flashlight_Light()
@@ -68,7 +75,7 @@ public class Flashlight_Mechanics : MonoBehaviour
                 StartCoroutine(FlickerEffect());                                                 //Run flicker IEnumerator
             }
 
-            if (myLight.intensity >= startFlicker)                                               //When intensity is great than the number set when the flicker starts
+            if (myLight.intensity >= startFlicker)                                               //When intensity is greater than the number set when the flicker starts
             {
                 StopCoroutine(FlickerEffect());                                                  //Stop flicker IEnumerator
             }
@@ -118,6 +125,27 @@ public class Flashlight_Mechanics : MonoBehaviour
             yield return new WaitForSeconds(FlickerSpeed);                                                      //Stops flicker
 
     }
+
+    void Toggle()                                                                                   //Function to toggle the range and angle of the flashlight
+    {
+        if (Input.GetKeyDown(KeyCode.T) && myLight.enabled == true)                                 //If the flashilight is on and the player presses "T", it will toggle
+        {
+            isToggled = !isToggled;                                                                 //Checks if the toggle is set on high or low when it gets ready to switch
+        }
+
+        if (isToggled)                                                                              //If the player toggles
+        {
+            myLight.range = LowPowerRange;                                                          //Sets the flashlight range to low power range var
+            myLight.spotAngle = LowPowerAngle;                                                      //Sets the flashlight angle to low power angle var
+        }
+
+        else
+        {
+            myLight.range = HighPowerRange;                                                         //Sets the flashlight range to high power range var
+            myLight.spotAngle = HighPowerAngle;                                                     //Sets the flashlight angle to high power angle var
+        }
+    }
+
 }
 
 

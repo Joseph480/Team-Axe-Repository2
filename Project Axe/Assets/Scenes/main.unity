@@ -594,11 +594,15 @@ MonoBehaviour:
   batteryLifeInSeconds: 10
   maxIntensity: 1
   minIntensity: 0.4
+  HighPowerRange: 10
+  HighPowerAngle: 30
+  LowPowerRange: 7
+  LowPowerAngle: 50
   swayAmount: 0.5
   maxAmount: 0.1
   smoothAmount: 5
   FlickerSpeed: 0.2
-  startFlicker: 0
+  startFlicker: 0.4
   maxRecharge: 0.8
   minRecharge: 0.6
 --- !u!65 &919511725
@@ -678,7 +682,7 @@ Light:
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
+  m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0

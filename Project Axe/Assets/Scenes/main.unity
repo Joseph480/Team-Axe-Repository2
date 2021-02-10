@@ -355,9 +355,10 @@ MonoBehaviour:
   Back: 115
   Left: 97
   Right: 100
-  Sprint: 0
+  Sprint: 304
   Jump: 32
   MoveSpeed: 3
+  SprintMultiplier: 1.5
   LookSpeed: 3
   JumpPower: 4
 --- !u!54 &184731424

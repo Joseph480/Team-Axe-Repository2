@@ -5,16 +5,17 @@ using UnityEngine;
 public class Player_Move_Controller : MonoBehaviour
 {
     public KeyCode Forward, Back, Left, Right, Sprint, Jump;
-    public float MoveSpeed, LookSpeed, JumpPower;
+    public float MoveSpeed, SprintMultiplier, LookSpeed, JumpPower;
 
     private Vector3 CamF,CamR,Mover;
     private Vector2 MinMax = new Vector2 (-90f, 90f);
-    private float Yaw, Pitch;
-    private bool Mf,Mb,Ml,Mr,Jmp;
+    private float Yaw, Pitch, BaseSpeed;
+    private bool Mf,Mb,Ml,Mr,Jmp,Sp;
     private Camera Cam;
     private Rigidbody Rb;
     
     void Start(){
+        BaseSpeed = MoveSpeed;
         Cam = Camera.main;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -28,13 +29,14 @@ public class Player_Move_Controller : MonoBehaviour
     }
     void FixedUpdate(){
         Move();
+        Sprinting();
     }
     void ReadController(){
         if(Input.GetKey(Forward))Mf=true;else Mf=false;
         if(Input.GetKey(Back))Mb=true;else Mb=false;
         if(Input.GetKey(Left))Ml=true;else Ml=false;
         if(Input.GetKey(Right))Mr=true;else Mr=false;
-        //if(Input.GetKey(Sprint))Sp=true;else Sp=false;
+        if(Input.GetKey(Sprint))Sp=true;else Sp=false;
         if(Input.GetKeyDown(Jump) && Player_Feet.Jumps > 0)Jmp=true;
     }
      void Move(){
@@ -65,6 +67,10 @@ public class Player_Move_Controller : MonoBehaviour
         Rb.velocity = transform.up * JumpPower;
         Player_Feet.Jumps--;
         Debug.Log(Player_Feet.Jumps);
+    }
+    void Sprinting(){
+        if (Sp) MoveSpeed = BaseSpeed * SprintMultiplier;
+        else MoveSpeed = BaseSpeed;
     }
     void OnTriggerEnter (Collider other){
         switch (other.tag){

@@ -5,12 +5,13 @@ using UnityEngine;
 public class Player_Move_Controller : MonoBehaviour
 {
     public KeyCode Forward, Back, Left, Right, Sprint, Jump;
-    public float MoveSpeed, SprintMultiplier, LookSpeed, JumpPower;
+    public float MoveSpeed, SprintMultiplier, LookSpeed, JumpPower, Drift, Drag;
 
     private Vector3 CamF,CamR,Mover;
     private Vector2 MinMax = new Vector2 (-90f, 90f);
     private float Yaw, Pitch, BaseSpeed;
-    private bool Mf,Mb,Ml,Mr,Jmp,Sp;
+    [HideInInspector]
+    public bool Mf,Mb,Ml,Mr,Jmp,Sp;//,Moving;
     private Camera Cam;
     private Rigidbody Rb;
     
@@ -39,12 +40,17 @@ public class Player_Move_Controller : MonoBehaviour
         if(Input.GetKey(Sprint))Sp=true;else Sp=false;
         if(Input.GetKeyDown(Jump) && Player_Feet.Jumps > 0)Jmp=true;
     }
+    /*void CheckMoving(){
+        if (Ml||Mr||Mf||Mb)Moving=true;else Moving=false;
+    }*/
      void Move(){
         CamRelative();
-        if (Mf) Mover += CamF;
-        if (Mb) Mover -= CamF;
-        if (Ml) Mover -= CamR;
-        if (Mr) Mover += CamR;
+        if (Mf){Mover += Vector3.Lerp(CamF,CamF,MoveSpeed);}
+        if (Mb){Mover -= Vector3.Lerp(CamF,CamF,MoveSpeed);}
+        if (Ml){Mover -= Vector3.Lerp(CamR,CamR,MoveSpeed);}
+        if (Mr){Mover += Vector3.Lerp(CamR,CamR,MoveSpeed);}
+        Vector3 Slide = Mover - transform.position; Vector3.Normalize(Slide);
+        Rb.AddForce(Slide * (Drift + Rb.velocity.magnitude)); if (Rb.velocity.magnitude >= Drag) Rb.AddForce(-Slide * (Drift + Rb.velocity.magnitude));
         Rb.MovePosition(Vector3.Lerp(transform.position,Mover,(MoveSpeed/50)));
         if (Jmp) Jumping();
     }

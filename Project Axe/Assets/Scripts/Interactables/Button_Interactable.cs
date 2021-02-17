@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Button_Interactable : Interactable_Base
 {
+    public AudioClip buttonSound;
+    private AudioSource audioSource;
+
     public override void OnInteract()
     {
         base.OnInteract();
@@ -12,5 +15,10 @@ public class Button_Interactable : Interactable_Base
 
         //FINISH
         //Press The Object
+
+        audioSource = GetComponent<AudioSource>();
+
+        audioSource.clip = buttonSound;
+        audioSource.Play();
     }
 }

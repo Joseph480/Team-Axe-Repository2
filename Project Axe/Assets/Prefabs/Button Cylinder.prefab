@@ -212,3 +212,4 @@ MonoBehaviour:
   isInteractable: 1
   tooltipMessage: Push Button
   buttonSound: {fileID: 8300000, guid: b07d42523a453ca448bc275bf1ee8e3c, type: 3}
+  buttonData: {fileID: 11400000, guid: 4a45cfedbf6bfa5408625b7ffc274d40, type: 2}

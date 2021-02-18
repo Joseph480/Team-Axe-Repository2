@@ -128,7 +128,7 @@ public class Interaction_Controller : MonoBehaviour
             //Interaction_Base.cs.
         if(m_interacting)
         {
-            //if the button is pressed but there is no interractable, leave the method
+            //if the button is pressed but there is no interactable, leave the method
             if (!interactionData.Interactable.IsInteractable)
                 return;
 

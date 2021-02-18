@@ -569,6 +569,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1442388166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1442388168}
+  - component: {fileID: 1442388167}
+  m_Layer: 0
+  m_Name: Button Cylinder Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1442388167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442388166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d2180e90a28b34ea4723ea3b43d040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonData: {fileID: 11400000, guid: 4a45cfedbf6bfa5408625b7ffc274d40, type: 2}
+  lockOverrideToggle: 0
+--- !u!4 &1442388168
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442388166}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.7793145, y: -4.0214376, z: 9.1560955}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1466036235}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1466036234
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,6 +644,7 @@ Transform:
   - {fileID: 518947290}
   - {fileID: 2045109232}
   - {fileID: 861215231}
+  - {fileID: 1442388168}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1206,6 +1252,16 @@ PrefabInstance:
     - target: {fileID: 7236836178425201536, guid: 8a46344b51beef347b05019b7f8e181f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236836178425201537, guid: 8a46344b51beef347b05019b7f8e181f,
+        type: 3}
+      propertyPath: activationTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236836178425201537, guid: 8a46344b51beef347b05019b7f8e181f,
+        type: 3}
+      propertyPath: hasActivationTime
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7236836178425201540, guid: 8a46344b51beef347b05019b7f8e181f,

@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class Pickable_Interactable : Interactable_Base
 {
+    public Item_Data item;
+
     public override void OnInteract()
     {
         base.OnInteract();
 
-        Debug.Log(gameObject.name + " Picked Up");
+        //Debug.Log(gameObject.name + " Picked Up");
 
         //FINISH
         //Pick Up The Object
+        Debug.Log(item.itemName + " Picked Up");
+
+        bool wasPickedUp = Inventory.instance.Add(item);
 
         //Destroy after picking up!
-        Destroy(gameObject);
+        if(wasPickedUp)
+        {
+
+            Destroy(gameObject);
+        }
+            
     }
 }

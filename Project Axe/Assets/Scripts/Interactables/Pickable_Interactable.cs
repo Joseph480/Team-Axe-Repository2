@@ -10,20 +10,13 @@ public class Pickable_Interactable : Interactable_Base
     {
         base.OnInteract();
 
-        //Debug.Log(gameObject.name + " Picked Up");
-
-        //FINISH
-        //Pick Up The Object
         Debug.Log(item.itemName + " Picked Up");
 
         bool wasPickedUp = Inventory.instance.Add(item);
 
         //Destroy after picking up!
         if(wasPickedUp)
-        {
-
             Destroy(gameObject);
-        }
             
     }
 }

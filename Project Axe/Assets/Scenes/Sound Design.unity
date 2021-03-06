@@ -180,7 +180,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 12
+  MinDistance: 20
   MaxDistance: 52
   Pan2D: 0
   rolloffMode: 0
@@ -2365,7 +2365,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 12
+  MinDistance: 25
   MaxDistance: 66
   Pan2D: 0
   rolloffMode: 0
@@ -2484,8 +2484,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 12
-  MaxDistance: 40
+  MinDistance: 25
+  MaxDistance: 45
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -2745,7 +2745,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 12
+  MinDistance: 25
   MaxDistance: 62
   Pan2D: 0
   rolloffMode: 1
@@ -2878,7 +2878,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 12
+  MinDistance: 28
   MaxDistance: 65
   Pan2D: 0
   rolloffMode: 1

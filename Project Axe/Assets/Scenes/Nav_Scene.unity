@@ -393,8 +393,9 @@ GameObject:
   - component: {fileID: 397570442}
   - component: {fileID: 397570441}
   - component: {fileID: 397570440}
-  - component: {fileID: 397570439}
   - component: {fileID: 397570445}
+  - component: {fileID: 397570446}
+  - component: {fileID: 397570439}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -402,19 +403,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &397570439
-MonoBehaviour:
+--- !u!135 &397570439
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397570438}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34cd4713da4f64447a3809cb4f6fe1d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 1
+  serializedVersion: 2
+  m_Radius: 10
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &397570440
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -530,6 +531,28 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &397570446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397570438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaa54e0b3d107f44589e00af59afe2eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 184731418}
+  target: {fileID: 184731422}
+  delay: 1
+  points: []
+  playerInSight: 0
+  fieldOfViewAngle: 110
+  isHearOrSee: 0
+  time: 20
+  maxTime: 0
+  minTime: 0
 --- !u!1 &452103853
 GameObject:
   m_ObjectHideFlags: 0

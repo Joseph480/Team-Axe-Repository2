@@ -308,7 +308,7 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>C:/Users/laros/OneDrive/Documents/GitHub/Team-Axe-Repository2/Project Axe/Library/PackageCache/com.unity.ext.nunit@1.0.5/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>C:/Users/David/Desktop/GitHub/Team-Axe-Repository2/Project Axe/Library/PackageCache/com.unity.ext.nunit@1.0.5/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -656,31 +656,31 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>C:/Users/laros/OneDrive/Documents/GitHub/Team-Axe-Repository2/Project Axe/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>C:/Users/David/Desktop/GitHub/Team-Axe-Repository2/Project Axe/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/laros/OneDrive/Documents/GitHub/Team-Axe-Repository2/Project Axe/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/David/Desktop/GitHub/Team-Axe-Repository2/Project Axe/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
- <HintPath>C:/Users/laros/OneDrive/Documents/GitHub/Team-Axe-Repository2/Project Axe/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ <HintPath>C:/Users/David/Desktop/GitHub/Team-Axe-Repository2/Project Axe/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>C:/Users/laros/OneDrive/Documents/GitHub/Team-Axe-Repository2/Project Axe/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>C:/Users/David/Desktop/GitHub/Team-Axe-Repository2/Project Axe/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>C:/Users/laros/OneDrive/Documents/GitHub/Team-Axe-Repository2/Project Axe/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>C:/Users/David/Desktop/GitHub/Team-Axe-Repository2/Project Axe/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/laros/OneDrive/Documents/GitHub/Team-Axe-Repository2/Project Axe/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/David/Desktop/GitHub/Team-Axe-Repository2/Project Axe/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/laros/OneDrive/Documents/GitHub/Team-Axe-Repository2/Project Axe/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Users/David/Desktop/GitHub/Team-Axe-Repository2/Project Axe/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>C:/Users/laros/OneDrive/Documents/GitHub/Team-Axe-Repository2/Project Axe/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>C:/Users/David/Desktop/GitHub/Team-Axe-Repository2/Project Axe/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/laros/OneDrive/Documents/GitHub/Team-Axe-Repository2/Project Axe/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Users/David/Desktop/GitHub/Team-Axe-Repository2/Project Axe/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

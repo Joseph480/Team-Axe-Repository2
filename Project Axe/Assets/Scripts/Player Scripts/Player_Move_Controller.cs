@@ -8,7 +8,7 @@ public class Player_Move_Controller : MonoBehaviour
     public float MoveSpeed, SprintMultiplier, LookSpeed, JumpPower, Drift, Drag;
 
     private Vector3 CamF,CamR,Mover;
-    private Vector2 MinMax = new Vector2 (-90f, 90f);
+    private Vector2 MinMax = new Vector2 (-89f, 89f);
     private float Yaw, Pitch, BaseSpeed;
     [HideInInspector]
     public bool Mf,Mb,Ml,Mr,Jmp,Sp;//,Moving;
